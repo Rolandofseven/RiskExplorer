@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './NavBar';
+import SimpleTabs from './Tabs.js';
+import DealGrid from './DealGrid';
 
-class App extends Component {
+import { AgGridReact } from 'ag-grid-react';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';
+
+class SearchAppBar extends Component {
+
+  constructor(props) {
+    super(props);
+
+    let x = 1;
+    x = "";
+    
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div><NavBar /><br />
+        <SimpleTabs />
+        <div
+          className="ag-theme-balham"
+          style={{
+            height: '500px',
+            width: '600px'
+          }}
+        >
+         
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default SearchAppBar;
